@@ -2,12 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="theme-color" content="#212121">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Explore annualized US large-cap stock returns across 1 to 50 year holding periods, using historical S&P 500 returns including dividends from 1928–2025.">
 <title>Time in the market · Historical stock returns</title>
 <style>
-:root{color-scheme:light;--paper:#f7f8fa;--ink:#17283c;--muted:#586778;--border:#dbe2e9;--blue:#125ea8;--orange:#bd5419;--green:#187464;--purple:#8054aa;--red:#ad394b;--slate:#66758e}
+:root{color-scheme:dark;--paper:#f7f8fa;--ink:#17283c;--muted:#586778;--border:#dbe2e9;--blue:#125ea8;--orange:#bd5419;--green:#187464;--purple:#8054aa;--red:#ad394b;--slate:#66758e}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--blue);text-underline-offset:3px}button,select{font:inherit}button,a,select{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #5f9ee0;outline-offset:4px}main{max-width:1160px;margin:auto;padding:0 36px 64px}.topbar{display:flex;justify-content:space-between;gap:20px;padding:26px 0;border-bottom:1px solid var(--border);font-size:14px}.brand{font-weight:700;letter-spacing:.025em}.topbar a{color:var(--muted)}header{padding:65px 0 36px;max-width:870px}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:750}h1{font-size:clamp(38px,6vw,68px);line-height:1.07;letter-spacing:-.05em;margin:17px 0 24px;font-weight:650}header p{font-size:20px;color:var(--muted);max-width:730px;margin:0}.metadata{display:flex;flex-wrap:wrap;gap:8px 23px;margin-top:24px;font-size:13px;color:var(--muted)}section{margin-top:48px}h2{font-size:26px;line-height:1.2;letter-spacing:-.025em;margin:0 0 12px}h3{font-size:18px;margin:0 0 12px}p{margin:0 0 16px}.section-head{display:flex;justify-content:space-between;align-items:start;gap:24px;margin-bottom:24px}.section-head p{color:var(--muted);max-width:740px;margin:0}.actions{display:flex;gap:10px;flex-wrap:wrap}.button{display:inline-block;background:white;border:1px solid var(--border);border-radius:7px;padding:8px 13px;color:var(--ink);text-decoration:none;font-size:13px;white-space:nowrap;cursor:pointer}.button:hover{background:#edf2f7}.highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden}.highlight{background:white;padding:23px}.highlight .label{font-size:13px;color:var(--muted)}.highlight strong{display:block;font-size:32px;line-height:1.25;margin:6px 0}.highlight p{font-size:13px;color:var(--muted);margin:0}.chart-shell{background:#fff;border:1px solid var(--border);border-radius:12px;padding:24px 24px 15px}.controls{display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:16px}.series-controls{display:flex;gap:9px 17px;flex-wrap:wrap}.series-controls label{cursor:pointer;font-size:13px;display:flex;align-items:center;gap:6px;white-space:nowrap}.series-controls input{accent-color:var(--blue);width:16px;height:16px;margin:0}.swatch{width:18px;border-top:3px solid;display:inline-block}.scale-control{font-size:13px;color:var(--muted);display:flex;gap:7px;align-items:center}.scale-control select{border:1px solid var(--border);background:white;color:var(--ink);border-radius:5px;padding:5px;font-size:13px}.plot{position:relative}.plot svg{display:block;width:100%;touch-action:pan-y}.plot text{font:12px system-ui,sans-serif;fill:var(--muted)}.chart-caption{font-size:12px;color:var(--muted);margin:8px 0 0}.tooltip{position:absolute;background:var(--ink);color:white;border-radius:7px;padding:11px 14px;font-size:13px;pointer-events:none;z-index:3;box-shadow:0 4px 18px #17283c22;line-height:1.7;min-width:175px}.tooltip strong{display:block;margin-bottom:4px}.tooltip-row{display:flex;justify-content:space-between;gap:22px}.year-control{display:flex;align-items:center;gap:15px;margin-top:12px;font-size:13px}.year-control input{flex:1;min-width:50px;accent-color:var(--blue)}.year-detail{font-size:13px;color:var(--muted);min-height:24px;margin-top:6px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:10px;background:white}table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums;white-space:nowrap}th,td{padding:14px 18px;text-align:left;border-bottom:1px solid #e7ecf0}th{color:var(--muted);font-weight:600;background:#f0f3f7;font-size:12px}td.numeric,th.numeric{text-align:right}tr:last-child td{border-bottom:0}tbody tr:hover{background:#f7faff}.negative{color:#ad394b}.positive{color:#187464}.period{color:var(--muted);font-size:12px;display:block}.note{font-size:13px;color:var(--muted);margin-top:13px;max-width:920px}.method-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:44px}.method-grid p,.method-grid li{font-size:14px;color:var(--muted)}.method-grid ul{padding-left:19px}.formula{padding:17px;background:#edf1f6;border-radius:7px;overflow:auto;font-family:ui-monospace,monospace;font-size:13px}.original{margin-top:28px;border-top:1px solid var(--border);padding-top:22px}.original summary{cursor:pointer;font-size:15px;font-weight:600}.original .table-wrap{max-width:600px;margin-top:18px}.original p{max-width:850px;margin-top:15px;font-size:13px;color:var(--muted)}footer{margin-top:54px;border-top:1px solid var(--border);padding-top:23px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}noscript{display:block;padding:20px;background:#fff1d2;margin:20px 0}.empty{font-size:14px!important;fill:var(--muted)!important}@media(max-width:700px){main{padding:0 18px 36px}header{padding-top:38px}header p{font-size:17px}.topbar{font-size:12px}.highlights{grid-template-columns:1fr}.highlight{padding:16px 20px}.highlight strong{font-size:27px}.section-head{display:block}.section-head .actions{margin-top:15px}.chart-shell{padding:16px 8px}.controls{padding:0 8px}.method-grid{grid-template-columns:1fr;gap:24px}th,td{padding:12px}h2{font-size:23px}section{margin-top:35px}.year-control,.year-detail,.chart-caption{margin-left:8px;margin-right:8px}.series-controls{gap:10px 14px}}@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}@media print{body{background:white}.topbar,.actions,.controls,.year-control,footer a{display:none}main{max-width:none;padding:0}.chart-shell,.table-wrap{break-inside:avoid}header{padding-top:15px}.original{display:none}}
+
+/* Chat-style dark presentation, with three focused chart panels. */
+:root{--paper:#212121;--ink:#ececec;--muted:#b4b4b4;--border:#424242;--blue:#82b8ff;--orange:#f2ad69;--green:#7bc9ae;--purple:#bd9eec;--red:#f28e9c;--slate:#aabbd0}
+main{max-width:1020px}header{padding-top:42px;padding-bottom:28px}h1{font-size:clamp(32px,5vw,48px);font-weight:600;letter-spacing:-.035em}header p{font-size:17px}h2{font-size:23px}.eyebrow{color:var(--muted)}
+.highlights{background:transparent;border:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);border-radius:0;gap:24px}.highlight{background:transparent;padding:20px 0}.highlight strong{font-size:27px;font-weight:500}
+.button,.scale-control select{background:#2b2b2b;color:var(--ink)}.button:hover{background:#363636}.chart-shell{background:transparent;border:0;border-radius:0;padding:0;margin:28px 0 42px}.controls{margin-bottom:10px}.panel-heading{font-size:15px;font-weight:500;margin-bottom:13px}.series-controls input{accent-color:#b7b7b7}.scale-control select{border-color:var(--border)}.plot text{fill:var(--muted)}
+.tooltip{background:#303030;color:var(--ink);border:1px solid #575757;box-shadow:0 5px 18px #0005}.table-wrap{background:transparent;border-radius:0;border-left:0;border-right:0}th{background:#292929;color:#d0d0d0}th,td{border-bottom-color:#3b3b3b}tbody tr:hover{background:#2b2b2b}.positive{color:#8ed1b8}.negative{color:#f49da6}.formula{background:#2c2c2c;color:var(--ink)}noscript{background:#493b20;color:#f4e7c8}.year-control input{accent-color:#b7b7b7}.chart-caption{margin-top:12px}
+@media(max-width:700px){.highlights{gap:0}.highlight{padding:15px 0}.chart-shell{padding:0}.controls{padding:0}.year-control,.year-detail,.chart-caption{margin-left:0;margin-right:0}}
+@media print{:root{--paper:white;--ink:#111;--muted:#444;--border:#ccc;--blue:#125ea8}body{background:white;color:#111}.highlight,.table-wrap,th,.formula{background:white;color:#111}.positive{color:#187464}.negative{color:#ad394b}.plot text{fill:#444}}
+
 </style>
 </head>
 <body>
@@ -15,7 +26,7 @@
 <nav class="topbar" aria-label="Page navigation"><span class="brand">MARKET HISTORY / RESEARCH NOTE</span><a href="#method">Sources &amp; methodology ↗</a></nav>
 <header>
 <div class="eyebrow">US large-cap stocks · 1928–2025</div>
-<h1>What changes when<br>you stay invested?</h1>
+<h1>Historical stock returns</h1>
 <p>A year can be spectacular or painful. Explore how historical annualized returns varied over holding periods from one year to half a century.</p>
 <div class="metadata"><span>98 complete calendar years</span><span>Dividends included</span><span>Nominal USD returns</span></div>
 </header>
@@ -25,14 +36,28 @@
 <div class="highlight"><span class="label">30-year annualized range</span><strong>8.0%–13.6%</strong><p>Across 69 overlapping historical windows</p></div>
 </div>
 <section aria-labelledby="chart-title">
-<div class="section-head"><div><h2 id="chart-title">The return depends on the years you hold.</h2><p>Compare rolling returns by the year an investment ends. A 10-year point at 2009 covers January 2000 through December 2009.</p></div></div>
-<div class="chart-shell">
-<div class="controls"><div class="series-controls" id="series" aria-label="Holding periods to display"></div><label class="scale-control">Vertical scale <select id="scale"><option value="fit">Fit selected series</option><option value="fixed">Fixed across all series</option></select></label></div>
-<div class="plot" id="plot"><svg id="chart" role="img" aria-label="Rolling annualized S&P 500 returns over time, including dividends"></svg><div class="tooltip" id="tooltip" hidden></div></div>
-<div class="year-control"><label for="year">Inspect year</label><input id="year" type="range" min="1928" max="2025" value="2025"><output id="year-value" for="year">2025</output></div>
-<div class="year-detail" id="year-detail" aria-live="polite"></div>
-<p class="chart-caption">Hover or tap the chart, or use the year slider. All values are annualized; the zero line marks a flat nominal return.</p>
+<div class="section-head"><div><h2 id="chart-title">Rolling annualized returns</h2><p>Compare rolling returns by the year an investment ends. A 10-year point at 2009 covers January 2000 through December 2009.</p></div></div>
+<div class="chart-shell" id="panel-0"><h3 class="panel-heading">1, 5 &amp; 10 years</h3>
+<div class="controls"><div class="series-controls" data-id="series" id="series-0" aria-label="Holding periods to display"></div><label class="scale-control">Vertical scale <select data-id="scale" id="scale-0"><option value="fit">Fit selected series</option><option value="fixed">Fixed across this panel</option></select></label></div>
+<div class="plot" data-id="plot" id="plot-0"><svg data-id="chart" id="chart-0" role="img" aria-label="Rolling annualized S&P 500 returns over time, including dividends"></svg><div class="tooltip" data-id="tooltip" id="tooltip-0" hidden></div></div>
+<div class="year-control"><label for="year-0">Inspect year</label><input data-id="year" id="year-0" type="range" min="1928" max="2025" value="2025"><output data-id="year-value" id="year-value-0" for="year-0">2025</output></div>
+<div class="year-detail" data-id="year-detail" id="year-detail-0" aria-live="polite"></div>
+
 </div>
+<div class="chart-shell" id="panel-1"><h3 class="panel-heading">15, 20 &amp; 25 years</h3>
+<div class="controls"><div class="series-controls" data-id="series" id="series-1" aria-label="Holding periods to display"></div><label class="scale-control">Vertical scale <select data-id="scale" id="scale-1"><option value="fit">Fit selected series</option><option value="fixed">Fixed across this panel</option></select></label></div>
+<div class="plot" data-id="plot" id="plot-1"><svg data-id="chart" id="chart-1" role="img" aria-label="Rolling annualized S&P 500 returns over time, including dividends"></svg><div class="tooltip" data-id="tooltip" id="tooltip-1" hidden></div></div>
+<div class="year-control"><label for="year-1">Inspect year</label><input data-id="year" id="year-1" type="range" min="1928" max="2025" value="2025"><output data-id="year-value" id="year-value-1" for="year-1">2025</output></div>
+<div class="year-detail" data-id="year-detail" id="year-detail-1" aria-live="polite"></div>
+
+</div>
+<div class="chart-shell" id="panel-2"><h3 class="panel-heading">30, 40 &amp; 50 years</h3>
+<div class="controls"><div class="series-controls" data-id="series" id="series-2" aria-label="Holding periods to display"></div><label class="scale-control">Vertical scale <select data-id="scale" id="scale-2"><option value="fit">Fit selected series</option><option value="fixed">Fixed across this panel</option></select></label></div>
+<div class="plot" data-id="plot" id="plot-2"><svg data-id="chart" id="chart-2" role="img" aria-label="Rolling annualized S&P 500 returns over time, including dividends"></svg><div class="tooltip" data-id="tooltip" id="tooltip-2" hidden></div></div>
+<div class="year-control"><label for="year-2">Inspect year</label><input data-id="year" id="year-2" type="range" min="1928" max="2025" value="2025"><output data-id="year-value" id="year-value-2" for="year-2">2025</output></div>
+<div class="year-detail" data-id="year-detail" id="year-detail-2" aria-live="polite"></div>
+<p class="chart-caption">Hover or tap the chart, or use the year slider. All values are annualized; the zero line marks a flat nominal return.</p>
+</div><p class="chart-caption">Each panel has its own vertical scale. All nine holding periods are visible by default.</p>
 </section>
 <section aria-labelledby="table-title">
 <div class="section-head"><div><h2 id="table-title">The best and worst, over longer horizons.</h2><p>Every available overlapping calendar-year window in the 1928–2025 sample.</p></div><div class="actions"><button type="button" class="button" id="download-summary">↓ Summary CSV</button><button type="button" class="button" id="download-data">↓ Annual data CSV</button></div></div>
@@ -62,57 +87,64 @@
 'use strict';
 const annual=[[1928,0.43810000000000004],[1929,-0.083],[1930,-0.25120000000000003],[1931,-0.4384],[1932,-0.0864],[1933,0.49979999999999997],[1934,-0.011899999999999999],[1935,0.46740000000000004],[1936,0.3194],[1937,-0.35340000000000005],[1938,0.2928],[1939,-0.011000000000000001],[1940,-0.1067],[1941,-0.1277],[1942,0.1917],[1943,0.2506],[1944,0.19030000000000002],[1945,0.3582],[1946,-0.0843],[1947,0.052000000000000005],[1948,0.057],[1949,0.183],[1950,0.3081],[1951,0.2368],[1952,0.1815],[1953,-0.0121],[1954,0.5256000000000001],[1955,0.326],[1956,0.07440000000000001],[1957,-0.10460000000000001],[1958,0.4372],[1959,0.1206],[1960,0.0034000000000000002],[1961,0.2664],[1962,-0.08810000000000001],[1963,0.2261],[1964,0.1642],[1965,0.124],[1966,-0.09970000000000001],[1967,0.23800000000000002],[1968,0.1081],[1969,-0.0824],[1970,0.0356],[1971,0.1422],[1972,0.18760000000000002],[1973,-0.1431],[1974,-0.259],[1975,0.37],[1976,0.23829999999999998],[1977,-0.0698],[1978,0.06509999999999999],[1979,0.1852],[1980,0.31739999999999996],[1981,-0.047],[1982,0.20420000000000002],[1983,0.2234],[1984,0.061500000000000006],[1985,0.3124],[1986,0.18489999999999998],[1987,0.0581],[1988,0.1654],[1989,0.3148],[1990,-0.030600000000000002],[1991,0.3023],[1992,0.07490000000000001],[1993,0.09970000000000001],[1994,0.013300000000000001],[1995,0.37200000000000005],[1996,0.2268],[1997,0.331],[1998,0.2834],[1999,0.2089],[2000,-0.09029999999999999],[2001,-0.1185],[2002,-0.21969999999999998],[2003,0.2836],[2004,0.1074],[2005,0.0483],[2006,0.1561],[2007,0.0548],[2008,-0.3655],[2009,0.2594],[2010,0.1482],[2011,0.021],[2012,0.1589],[2013,0.3215],[2014,0.1352],[2015,0.0138],[2016,0.1177],[2017,0.2161],[2018,-0.042300000000000004],[2019,0.3121],[2020,0.1802],[2021,0.2847],[2022,-0.1804],[2023,0.2606],[2024,0.2488],[2025,0.1778]];
 const horizons=[1,5,10,15,20,25,30,40,50];
-const colors=['#66758e','#bd5419','#125ea8','#8054aa','#187464','#ad394b','#397ea1','#8b7133','#ae5788'];
+const colors=['#88b5ff','#f0b279','#9dd4be','#88b5ff','#f0b279','#9dd4be','#88b5ff','#f0b279','#9dd4be'];
 const series=horizons.map((n,k)=>({n,color:colors[k],values:annual.slice(n-1).map((_,j)=>({year:annual[j+n-1][0],start:annual[j][0],rate:Math.expm1(annual.slice(j,j+n).reduce((a,v)=>a+Math.log1p(v[1]),0)/n)}))}));
-const selected=new Set([5,10,20,30]);
+const allSeries=series;
+for(let panelIndex=0;panelIndex<3;panelIndex++){
+const root=document.getElementById('panel-'+panelIndex);
+const get=id=>root.querySelector('[data-id="'+id+'"]');
+const series=allSeries.slice(panelIndex*3,panelIndex*3+3);
+const selected=new Set(series.map(s=>s.n));
 const pct=v=>(v<0?'−':'+')+Math.abs(v*100).toFixed(1)+'%';
 const period=v=>v.start===v.year?String(v.year):v.start+'–'+v.year;
-const svg=document.getElementById('chart'),plot=document.getElementById('plot'),tip=document.getElementById('tooltip');
-const yearInput=document.getElementById('year'),yearValue=document.getElementById('year-value'),yearDetail=document.getElementById('year-detail');
+const svg=get('chart'),plot=get('plot'),tip=get('tooltip');
+const yearInput=get('year'),yearValue=get('year-value'),yearDetail=get('year-detail');
 let geometry=null,activeYear=2025;
 const NS='http://www.w3.org/2000/svg';
 function el(tag,attrs={},text,parent=svg){const e=document.createElementNS(NS,tag);Object.entries(attrs).forEach(([k,v])=>e.setAttribute(k,v));if(text!==undefined)e.textContent=text;parent.appendChild(e);return e;}
-series.forEach(s=>{const label=document.createElement('label');const input=document.createElement('input');input.type='checkbox';input.checked=selected.has(s.n);input.setAttribute('aria-label',s.n+' year holding period');input.addEventListener('change',()=>{input.checked?selected.add(s.n):selected.delete(s.n);draw();});const swatch=document.createElement('span');swatch.className='swatch';swatch.style.borderColor=s.color;label.append(input,swatch,document.createTextNode(s.n+' yr'));document.getElementById('series').appendChild(label);});
+series.forEach(s=>{const label=document.createElement('label');const input=document.createElement('input');input.type='checkbox';input.checked=selected.has(s.n);input.setAttribute('aria-label',s.n+' year holding period');input.addEventListener('change',()=>{input.checked?selected.add(s.n):selected.delete(s.n);draw();});const swatch=document.createElement('span');swatch.className='swatch';swatch.style.borderColor=s.color;swatch.style.borderTopStyle=['solid','dashed','dotted'][series.indexOf(s)];label.append(input,swatch,document.createTextNode(s.n+' yr'));get('series').appendChild(label);});
 function draw(){
  tip.hidden=true;svg.replaceChildren();
- const w=plot.clientWidth||900,h=w<500?320:385,left=58,right=19,top=29,bottom=46;
+ const w=plot.clientWidth||900,h=w<500?275:290,left=58,right=19,top=29,bottom=46;
  svg.setAttribute('viewBox',`0 0 ${w} ${h}`);svg.setAttribute('height',h);
  el('title',{},'Annualized total returns by ending calendar year');el('desc',{},'Each line shows compound annual growth for a selected holding period. The table below reports the extreme historical windows.');
- const visible=series.filter(s=>selected.has(s.n));const domainSeries=document.getElementById('scale').value==='fixed'?series:visible;
+ const visible=series.filter(s=>selected.has(s.n));const domainSeries=get('scale').value==='fixed'?series:visible;
  const values=domainSeries.flatMap(s=>s.values.map(v=>v.rate));let min=Math.min(0,...values),max=Math.max(0,...values);if(min===max){min=-.05;max=.05;}
  const span=max-min,step=span>.7?.2:span>.35?.1:span>.18?.05:span>.08?.025:.01;
  const low=Math.floor((min-span*.03)/step)*step,high=Math.ceil((max+span*.03)/step)*step;
  const x=year=>left+(year-1928)/97*(w-left-right),y=rate=>h-bottom-(rate-low)/(high-low)*(h-top-bottom);
  geometry={w,h,left,right,top,bottom,x,y,visible};
- for(let v=low;v<=high+step*.1;v+=step){el('line',{x1:left,x2:w-right,y1:y(v),y2:y(v),stroke:Math.abs(v)<1e-8?'#8a98a7':'#e7ecf0','stroke-width':Math.abs(v)<1e-8?1.2:1});el('text',{x:left-9,y:y(v)+4,'text-anchor':'end'},(Math.abs(v)<1e-8?'0':(v*100).toFixed(step===.025?1:0))+'%');}
+ for(let v=low;v<=high+step*.1;v+=step){el('line',{x1:left,x2:w-right,y1:y(v),y2:y(v),stroke:Math.abs(v)<1e-8?'#888888':'#363636','stroke-width':Math.abs(v)<1e-8?1.2:1});el('text',{x:left-9,y:y(v)+4,'text-anchor':'end'},(Math.abs(v)<1e-8?'0':(v*100).toFixed(step===.025?1:0))+'%');}
  const ticks=w<500?[1930,1960,1990,2025]:[1930,1945,1960,1975,1990,2005,2025];
  ticks.forEach(year=>el('text',{x:x(year),y:h-bottom+23,'text-anchor':year===2025?'end':'middle'},String(year)));
  el('text',{x:left,y:14},'Annualized return');el('text',{x:(left+w-right)/2,y:h-4,'text-anchor':'middle'},'Ending calendar year');
- visible.forEach(s=>{el('path',{d:s.values.map((v,i)=>(i?'L':'M')+x(v.year).toFixed(2)+','+y(v.rate).toFixed(2)).join(' '),fill:'none',stroke:s.color,'stroke-width':s.n===1?1.4:2.4,'stroke-linejoin':'round','stroke-linecap':'round'});});
+ visible.forEach(s=>{el('path',{d:s.values.map((v,i)=>(i?'L':'M')+x(v.year).toFixed(2)+','+y(v.rate).toFixed(2)).join(' '),fill:'none',stroke:s.color,'stroke-width':2,'stroke-dasharray':['','7 3','2 3'][series.indexOf(s)],'stroke-linejoin':'round','stroke-linecap':'round'});});
  if(!visible.length)el('text',{x:(left+w-right)/2,y:h/2,'text-anchor':'middle',class:'empty'},'Select a holding period above.');
- const focus=el('g',{id:'chart-focus','pointer-events':'none'});el('line',{id:'year-guide',y1:top,y2:h-bottom,stroke:'#17283c','stroke-opacity':.35,'stroke-dasharray':'3 4'},undefined,focus);
- el('rect',{x:left,y:top,width:w-left-right,height:h-top-bottom,fill:'transparent',id:'chart-hit'}).addEventListener('pointermove',event=>inspectPointer(event));
- svg.querySelector('#chart-hit').addEventListener('click',event=>inspectPointer(event));
+ const focus=el('g',{class:'chart-focus','pointer-events':'none'});el('line',{class:'year-guide',y1:top,y2:h-bottom,stroke:'#e3e3e3','stroke-opacity':.35,'stroke-dasharray':'3 4'},undefined,focus);
+ el('rect',{x:left,y:top,width:w-left-right,height:h-top-bottom,fill:'transparent',class:'chart-hit'}).addEventListener('pointermove',event=>inspectPointer(event));
+ svg.querySelector('.chart-hit').addEventListener('click',event=>inspectPointer(event));
  inspectYear(activeYear,false);
 }
 function inspectPointer(event){const rect=svg.getBoundingClientRect(),px=(event.clientX-rect.left)*geometry.w/rect.width;const year=Math.round(1928+(px-geometry.left)/(geometry.w-geometry.left-geometry.right)*97);inspectYear(Math.max(1928,Math.min(2025,year)),true);}
 function inspectYear(year,showTip){
  activeYear=year;yearInput.value=year;yearValue.textContent=year;
- const {x,y,visible,w,h}=geometry;const g=svg.querySelector('#chart-focus');g.querySelectorAll('circle').forEach(e=>e.remove());const guide=g.querySelector('line');guide.setAttribute('x1',x(year));guide.setAttribute('x2',x(year));
+ const {x,y,visible,w,h}=geometry;const g=svg.querySelector('.chart-focus');g.querySelectorAll('circle').forEach(e=>e.remove());const guide=g.querySelector('line');guide.setAttribute('x1',x(year));guide.setAttribute('x2',x(year));
  const rows=visible.map(s=>({s,v:s.values.find(v=>v.year===year)}));
- rows.forEach(({s,v})=>{if(v)el('circle',{cx:x(year),cy:y(v.rate),r:3.5,fill:s.color,stroke:'white','stroke-width':1.3},undefined,g);});
+ rows.forEach(({s,v})=>{if(v)el('circle',{cx:x(year),cy:y(v.rate),r:3.5,fill:s.color,stroke:'#212121','stroke-width':1.3},undefined,g);});
  const available=rows.filter(r=>r.v);yearDetail.textContent=available.length?available.map(({s,v})=>s.n+' yr: '+pct(v.rate)+' ('+period(v)+')').join(' · '):'No complete selected holding period is available for this ending year.';
  tip.replaceChildren();const title=document.createElement('strong');title.textContent='Ending '+year;tip.appendChild(title);
  rows.forEach(({s,v})=>{const row=document.createElement('div');row.className='tooltip-row';const a=document.createElement('span'),b=document.createElement('span');a.textContent=s.n+' years';b.textContent=v?pct(v.rate):'Not available';row.append(a,b);tip.appendChild(row);});
  tip.hidden=!showTip||!visible.length;if(!tip.hidden){tip.style.left=Math.max(2,Math.min(w-tip.offsetWidth-2,x(year)+14))+'px';tip.style.top=Math.max(20,Math.min(h-tip.offsetHeight-15,35))+'px';}
 }
 svg.addEventListener('pointerleave',()=>{tip.hidden=true;});
-yearInput.addEventListener('input',()=>inspectYear(Number(yearInput.value),false));document.getElementById('scale').addEventListener('change',draw);
+yearInput.addEventListener('input',()=>inspectYear(Number(yearInput.value),false));get('scale').addEventListener('change',draw);
 new ResizeObserver(draw).observe(plot);
+
+draw();
+}
 function download(name,rows){const csv=rows.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
 document.getElementById('download-data').addEventListener('click',()=>download('annual-stock-returns-1928-2025.csv',[['Year','Nominal total return (decimal; dividends included)'],...annual]));
 document.getElementById('download-summary').addEventListener('click',()=>download('rolling-stock-returns-summary.csv',[['Holding years','Worst annualized return (decimal)','Worst start year','Worst end year','Best annualized return (decimal)','Best start year','Best end year','Window count'],...series.map(s=>{const worst=s.values.reduce((a,b)=>a.rate<b.rate?a:b),best=s.values.reduce((a,b)=>a.rate>b.rate?a:b);return[s.n,worst.rate,worst.start,worst.year,best.rate,best.start,best.year,s.values.length];})]));
-draw();
 </script>
 </body>
 </html>

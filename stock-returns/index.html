@@ -39,20 +39,21 @@ main{max-width:1020px}header{padding-top:42px;padding-bottom:28px}h1{font-size:c
 <header>
 <div class="eyebrow">US large-cap stocks · 1928–2025</div>
 <h1>Historical stock returns</h1>
-<div class="metadata"><span>98 complete calendar years</span><span>Dividends included</span><span>Nominal USD returns</span></div>
+<div class="metadata"><span>98 complete calendar years</span><span>Dividends included</span><span id="return-basis">Inflation-adjusted returns</span></div>
 </header>
+<div class="controls" style="margin-bottom:16px"><label class="scale-control" for="return-mode">Return basis <select id="return-mode"><option value="real" selected>Inflation-adjusted (real)</option><option value="nominal">Nominal</option></select></label><span class="chart-caption" id="basis-description">Real returns measure changes in purchasing power.</span></div>
 <div class="table-wrap compact-summary">
 <table aria-label="Selected historical findings">
-<thead><tr><th scope="col">Historical finding</th><th scope="col" class="numeric">Return</th></tr></thead>
+<thead><tr><th scope="col">Historical finding</th><th scope="col" class="numeric">Real return</th></tr></thead>
 <tbody>
-<tr><th scope="row">Worst single year<span class="summary-context">1931</span></th><td class="numeric">−43.8%</td></tr>
-<tr><th scope="row">Worst 20-year annualized<span class="summary-context">1929–1948 · before inflation</span></th><td class="numeric">+2.4%</td></tr>
-<tr><th scope="row">30-year annualized range<span class="summary-context">69 overlapping windows</span></th><td class="numeric">8.0%–13.6%</td></tr>
+<tr><th scope="row">Worst single year<span class="summary-context">1931</span></th><td class="numeric">−38.1%</td></tr>
+<tr><th scope="row">Worst 20-year annualized<span class="summary-context">1929–1948</span></th><td class="numeric">+0.6%</td></tr>
+<tr><th scope="row">30-year annualized range<span class="summary-context">69 overlapping windows</span></th><td class="numeric">+4.3%–+10.1%</td></tr>
 </tbody>
 </table>
 </div>
 <section aria-labelledby="chart-title">
-<div class="section-head"><div><h2 id="chart-title">Rolling annualized returns</h2><p>Compare rolling returns by the year an investment ends. A 10-year point at 2009 covers January 2000 through December 2009.</p></div></div>
+<div class="section-head"><div><h2 id="chart-title">Rolling inflation-adjusted returns</h2><p>Compare rolling returns by the year an investment ends. A 10-year point at 2009 covers January 2000 through December 2009.</p></div></div>
 <div class="chart-shell" id="panel-0"><h3 class="panel-heading">1, 5 &amp; 10 years</h3>
 <div class="controls"><div class="series-controls" data-id="series" id="series-0" aria-label="Holding periods to display"></div><label class="scale-control">Vertical scale <select data-id="scale" id="scale-0"><option value="fit">Fit selected series</option><option value="fixed">Fixed across this panel</option></select></label></div>
 <div class="plot" data-id="plot" id="plot-0"><svg data-id="chart" id="chart-0" role="img" aria-label="Rolling annualized S&P 500 returns over time, including dividends"></svg><div class="tooltip" data-id="tooltip" id="tooltip-0" hidden></div></div>
@@ -72,31 +73,31 @@ main{max-width:1020px}header{padding-top:42px;padding-bottom:28px}h1{font-size:c
 <div class="plot" data-id="plot" id="plot-2"><svg data-id="chart" id="chart-2" role="img" aria-label="Rolling annualized S&P 500 returns over time, including dividends"></svg><div class="tooltip" data-id="tooltip" id="tooltip-2" hidden></div></div>
 <div class="year-control"><label for="year-2">Inspect year</label><input data-id="year" id="year-2" type="range" min="1928" max="2025" value="2025"><output data-id="year-value" id="year-value-2" for="year-2">2025</output></div>
 <div class="year-detail" data-id="year-detail" id="year-detail-2" aria-live="polite"></div>
-<p class="chart-caption">Hover or tap the chart, or use the year slider. All values are annualized; the zero line marks a flat nominal return.</p>
+<p class="chart-caption">Hover or tap the chart, or use the year slider. All values are annualized; the zero line marks no change on the selected return basis.</p>
 </div><p class="chart-caption">Each panel has its own vertical scale. All nine holding periods are visible by default.</p>
 </section>
 <section aria-labelledby="table-title">
 <div class="section-head"><div><h2 id="table-title">The best and worst, over longer horizons.</h2><p>Every available overlapping calendar-year window in the 1928–2025 sample.</p></div><div class="actions"><button type="button" class="button" id="download-summary">↓ Summary CSV</button><button type="button" class="button" id="download-data">↓ Annual data CSV</button></div></div>
-<div class="table-wrap"><table><thead><tr><th scope="col">Holding period</th><th scope="col" class="numeric">Worst annualized</th><th scope="col" class="numeric">Best annualized</th><th scope="col" class="numeric">Windows</th></tr></thead><tbody id="summary"><tr><td>1 year</td><td class="numeric"><span class="negative">−43.8%</span><span class="period">1931</span></td><td class="numeric"><span class="positive">+52.6%</span><span class="period">1954</span></td><td class="numeric">98</td></tr>
-<tr><td>5 years</td><td class="numeric"><span class="negative">−12.7%</span><span class="period">1928–1932</span></td><td class="numeric"><span class="positive">+28.3%</span><span class="period">1995–1999</span></td><td class="numeric">94</td></tr>
-<tr><td>10 years</td><td class="numeric"><span class="negative">−1.7%</span><span class="period">1929–1938</span></td><td class="numeric"><span class="positive">+20.1%</span><span class="period">1949–1958</span></td><td class="numeric">89</td></tr>
-<tr><td>15 years</td><td class="numeric"><span class="negative">−0.2%</span><span class="period">1929–1943</span></td><td class="numeric"><span class="positive">+18.8%</span><span class="period">1985–1999</span></td><td class="numeric">84</td></tr>
-<tr><td>20 years</td><td class="numeric"><span class="positive">+2.4%</span><span class="period">1929–1948</span></td><td class="numeric"><span class="positive">+17.7%</span><span class="period">1980–1999</span></td><td class="numeric">79</td></tr>
-<tr><td>25 years</td><td class="numeric"><span class="positive">+5.2%</span><span class="period">1929–1953</span></td><td class="numeric"><span class="positive">+17.1%</span><span class="period">1975–1999</span></td><td class="numeric">74</td></tr>
-<tr><td>30 years</td><td class="numeric"><span class="positive">+8.0%</span><span class="period">1929–1958</span></td><td class="numeric"><span class="positive">+13.6%</span><span class="period">1970–1999</span></td><td class="numeric">69</td></tr>
-<tr><td>40 years</td><td class="numeric"><span class="positive">+8.5%</span><span class="period">1929–1968</span></td><td class="numeric"><span class="positive">+12.5%</span><span class="period">1950–1989</span></td><td class="numeric">59</td></tr>
-<tr><td>50 years</td><td class="numeric"><span class="positive">+7.4%</span><span class="period">1929–1978</span></td><td class="numeric"><span class="positive">+13.6%</span><span class="period">1950–1999</span></td><td class="numeric">49</td></tr></tbody></table></div>
-<p class="note">Longer horizons generally narrowed the annualized return range, but the relationship is not strictly monotonic. Each horizon uses a different set of windows; longer windows are fewer and overlap heavily. A positive endpoint return can still include large losses along the way.</p>
+<div class="table-wrap"><table><thead><tr><th scope="col">Holding period</th><th scope="col" class="numeric">Worst annualized</th><th scope="col" class="numeric">Best annualized</th><th scope="col" class="numeric">Windows</th></tr></thead><tbody id="summary"><tr><td>1 year</td><td class="numeric"><span class="negative">−38.1%</span><span class="period">1931</span></td><td class="numeric"><span class="positive">+53.7%</span><span class="period">1954</span></td><td class="numeric">98</td></tr>
+<tr><td>5 years</td><td class="numeric"><span class="negative">−10.3%</span><span class="period">1937–1941</span></td><td class="numeric"><span class="positive">+25.3%</span><span class="period">1995–1999</span></td><td class="numeric">94</td></tr>
+<tr><td>10 years</td><td class="numeric"><span class="negative">−3.8%</span><span class="period">1999–2008</span></td><td class="numeric"><span class="positive">+17.9%</span><span class="period">1949–1958</span></td><td class="numeric">89</td></tr>
+<tr><td>15 years</td><td class="numeric"><span class="negative">−0.5%</span><span class="period">1965–1979</span></td><td class="numeric"><span class="positive">+15.1%</span><span class="period">1985–1999</span></td><td class="numeric">84</td></tr>
+<tr><td>20 years</td><td class="numeric"><span class="positive">+0.6%</span><span class="period">1929–1948</span></td><td class="numeric"><span class="positive">+13.2%</span><span class="period">1980–1999</span></td><td class="numeric">79</td></tr>
+<tr><td>25 years</td><td class="numeric"><span class="positive">+2.8%</span><span class="period">1957–1981</span></td><td class="numeric"><span class="positive">+11.7%</span><span class="period">1975–1999</span></td><td class="numeric">74</td></tr>
+<tr><td>30 years</td><td class="numeric"><span class="positive">+4.3%</span><span class="period">1965–1994</span></td><td class="numeric"><span class="positive">+10.1%</span><span class="period">1932–1961</span></td><td class="numeric">69</td></tr>
+<tr><td>40 years</td><td class="numeric"><span class="positive">+4.2%</span><span class="period">1969–2008</span></td><td class="numeric"><span class="positive">+9.2%</span><span class="period">1982–2021</span></td><td class="numeric">59</td></tr>
+<tr><td>50 years</td><td class="numeric"><span class="positive">+4.5%</span><span class="period">1929–1978</span></td><td class="numeric"><span class="positive">+9.2%</span><span class="period">1949–1998</span></td><td class="numeric">49</td></tr></tbody></table></div>
+<p class="note">Longer horizons generally narrowed the annualized return range, but the relationship is not strictly monotonic. Each horizon uses a different set of windows; longer windows are fewer and overlap heavily. A positive endpoint return can still include large losses along the way. In real mode, positive returns indicate purchasing-power growth.</p>
 </section>
 <section id="method" aria-labelledby="method-title">
 <h2 id="method-title">How to read these findings</h2>
 <div class="method-grid">
-<div><h3>Compounded, not averaged</h3><p>For each holding period, we compound the annual returns, convert the result into an equivalent annual growth rate, and report the lowest and highest outcomes.</p><div class="formula">Annualized return = [∏ (1 + rᵧ)]<sup>1 / N</sup> − 1</div><p style="margin-top:14px">N is the number of years. A 5-year window advances one calendar year at a time: 1928–1932, 1929–1933, and so on. There are 98 − N + 1 windows for each horizon.</p><p>This is a buy-and-hold calculation with reinvested dividends, with no contributions or withdrawals during a window. Monthly starting dates could produce different extremes.</p></div>
-<div><h3>Source &amp; boundaries</h3><p><a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html">Aswath Damodaran, NYU Stern: Historical Returns on Stocks, Bonds and Bills</a>, using the “S&amp;P 500 (includes dividends)” column. The dataset includes historical predecessor data before the modern S&amp;P 500.</p><ul><li>Snapshot: 1928–2025; source updated January 5, 2026; retrieved September 22, 2026.</li><li>Calculations use the published annual returns rounded to two decimal percentage points. Other total-return datasets can differ.</li><li>Returns are before inflation, taxes, investment fees, and trading costs.</li><li>2026 is excluded because it is an incomplete calendar year. This page is a fixed snapshot, not a live market feed.</li></ul></div>
+<div><h3>Compounding and purchasing power</h3><p>For each holding period, we compound the annual returns, convert the result into an equivalent annual growth rate, and report the lowest and highest outcomes.</p><div class="formula">Nominal = [∏ (1 + rᵧ)]<sup>1 / N</sup> − 1<br>Real = [∏ (1 + rᵧ) × CPI<sub>start−1, Dec</sub> / CPI<sub>end, Dec</sub>]<sup>1 / N</sup> − 1</div><p style="margin-top:14px">N is the number of years. A 5-year window advances one calendar year at a time: 1928–1932, 1929–1933, and so on. There are 98 − N + 1 windows for each horizon.</p><p>Real returns use the all-items CPI-U, U.S. city average, not seasonally adjusted (1982–84 = 100). Each calendar-year window runs from the preceding December CPI to its ending December CPI. For example, 2000–2009 uses December 1999 and December 2009. December CPI is a monthly price index, not a daily year-end observation. The adjustment divides by the cumulative price change; it does not simply subtract inflation rates.</p><p>This is a buy-and-hold calculation with reinvested dividends, with no contributions or withdrawals during a window. Monthly starting dates could produce different extremes.</p></div>
+<div><h3>Source &amp; boundaries</h3><p><a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html">Aswath Damodaran, NYU Stern: Historical Returns on Stocks, Bonds and Bills</a>, using the “S&amp;P 500 (includes dividends)” column. The dataset includes historical predecessor data before the modern S&amp;P 500.</p><ul><li>Snapshot: 1928–2025; source updated January 5, 2026; retrieved September 22, 2026.</li><li>Calculations use the published annual returns rounded to two decimal percentage points. Other total-return datasets can differ.</li><li>Real mode adjusts for CPI inflation; nominal mode does not. Both exclude taxes, investment fees, and trading costs. CPI measures an average consumption basket, not personal spending.</li><li>Inflation source: <a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202512.xlsx">BLS Historical CPI-U, December 2025 (XLSX)</a>, Index Levels sheet, December column, 1927–2025. Retrieved October 17, 2026.</li><li>2026 is excluded because it is an incomplete calendar year. This page is a fixed snapshot, not a live market feed.</li></ul></div>
 </div>
-<details class="original"><summary>The original table that prompted this analysis</summary><p>The reference image is titled “Annualized Returns of Large Domestic Stocks for Different Time Periods 1935–2013.” Its figures are reproduced below as supplied. Its underlying dataset and calculation conventions were not identified, so these values are not treated as the source for the expanded calculations.</p><div class="table-wrap"><table><thead><tr><th scope="col">Holding period</th><th scope="col" class="numeric">Worst</th><th scope="col" class="numeric">Best</th></tr></thead><tbody><tr><td>1 year</td><td class="numeric">−43%</td><td class="numeric">+54%</td></tr><tr><td>5 years</td><td class="numeric">−12%</td><td class="numeric">+29%</td></tr><tr><td>10 years</td><td class="numeric">−1%</td><td class="numeric">+20%</td></tr></tbody></table></div></details>
+<details class="original"><summary>The original table that prompted this analysis</summary><p>The reference image is titled “Annualized Returns of Large Domestic Stocks for Different Time Periods 1935–2013.” Its figures are reproduced below as supplied and remain unadjusted when the return-basis switch changes. Its underlying dataset and calculation conventions were not identified, so these values are not treated as the source for the expanded calculations.</p><div class="table-wrap"><table><thead><tr><th scope="col">Holding period</th><th scope="col" class="numeric">Worst</th><th scope="col" class="numeric">Best</th></tr></thead><tbody><tr><td>1 year</td><td class="numeric">−43%</td><td class="numeric">+54%</td></tr><tr><td>5 years</td><td class="numeric">−12%</td><td class="numeric">+29%</td></tr><tr><td>10 years</td><td class="numeric">−1%</td><td class="numeric">+20%</td></tr></tbody></table></div></details>
 </section>
-<noscript>The summary table and methodology remain available. Enable JavaScript to use the chart and CSV downloads.</noscript>
+<noscript>The summary table and methodology remain available. The static tables show inflation-adjusted returns. Enable JavaScript to use the chart, return-basis switch, and CSV downloads.</noscript>
 <footer><span>Historical outcomes are not forecasts or guaranteed future returns.</span><a href="https://github.com/myazdani/myazdani.github.io/tree/master/stock-returns">View page source ↗</a></footer>
 </main>
 <script>
@@ -105,6 +106,32 @@ const annual=[[1928,0.43810000000000004],[1929,-0.083],[1930,-0.2512000000000000
 const horizons=[1,5,10,15,20,25,30,40,50];
 const colors=['#88b5ff','#f0b279','#9dd4be','#88b5ff','#f0b279','#9dd4be','#88b5ff','#f0b279','#9dd4be'];
 const series=horizons.map((n,k)=>({n,color:colors[k],values:annual.slice(n-1).map((_,j)=>({year:annual[j+n-1][0],start:annual[j][0],rate:Math.expm1(annual.slice(j,j+n).reduce((a,v)=>a+Math.log1p(v[1]),0)/n)}))}));
+
+const cpiDecember={"1927":17.3,"1928":17.1,"1929":17.2,"1930":16.1,"1931":14.6,"1932":13.1,"1933":13.2,"1934":13.4,"1935":13.8,"1936":14.0,"1937":14.4,"1938":14.0,"1939":14.0,"1940":14.1,"1941":15.5,"1942":16.9,"1943":17.4,"1944":17.8,"1945":18.2,"1946":21.5,"1947":23.4,"1948":24.1,"1949":23.6,"1950":25.0,"1951":26.5,"1952":26.7,"1953":26.9,"1954":26.7,"1955":26.8,"1956":27.6,"1957":28.4,"1958":28.9,"1959":29.4,"1960":29.8,"1961":30.0,"1962":30.4,"1963":30.9,"1964":31.2,"1965":31.8,"1966":32.9,"1967":33.9,"1968":35.5,"1969":37.7,"1970":39.8,"1971":41.1,"1972":42.5,"1973":46.2,"1974":51.9,"1975":55.5,"1976":58.2,"1977":62.1,"1978":67.7,"1979":76.7,"1980":86.3,"1981":94.0,"1982":97.6,"1983":101.3,"1984":105.3,"1985":109.3,"1986":110.5,"1987":115.4,"1988":120.5,"1989":126.1,"1990":133.8,"1991":137.9,"1992":141.9,"1993":145.8,"1994":149.7,"1995":153.5,"1996":158.6,"1997":161.3,"1998":163.9,"1999":168.3,"2000":174.0,"2001":176.7,"2002":180.9,"2003":184.3,"2004":190.3,"2005":196.8,"2006":201.8,"2007":210.036,"2008":210.228,"2009":215.949,"2010":219.179,"2011":225.672,"2012":229.601,"2013":233.049,"2014":234.812,"2015":236.525,"2016":241.432,"2017":246.524,"2018":251.233,"2019":256.974,"2020":260.474,"2021":278.802,"2022":296.797,"2023":306.746,"2024":315.605,"2025":324.054};
+let returnMode='real';
+const redrawCharts=[];
+series.forEach(s=>s.values.forEach(v=>{
+ v.nominalRate=v.rate;
+ v.realRate=Math.expm1(Math.log1p(v.nominalRate)+(Math.log(cpiDecember[v.start-1])-Math.log(cpiDecember[v.year]))/s.n);
+ v.rate=v.realRate;
+}));
+const formatReturn=v=>(v<0?'−':'+')+Math.abs(v*100).toFixed(1)+'%';
+const formatPeriod=v=>v.start===v.year?String(v.year):v.start+'–'+v.year;
+function extremes(s){return {worst:s.values.reduce((a,b)=>a.rate<b.rate?a:b),best:s.values.reduce((a,b)=>a.rate>b.rate?a:b)};}
+function updateTables(){
+ const tbody=document.getElementById('summary');
+ tbody.innerHTML=series.map(s=>{const {worst,best}=extremes(s);const cell=v=>'<td class="numeric"><span class="'+(v.rate<0?'negative':'positive')+'">'+formatReturn(v.rate)+'</span><span class="period">'+formatPeriod(v)+'</span></td>';return '<tr><td>'+s.n+' year'+(s.n>1?'s':'')+'</td>'+cell(worst)+cell(best)+'<td class="numeric">'+s.values.length+'</td></tr>';}).join('');
+ const rows=document.querySelectorAll('.compact-summary tbody tr');
+ [0,4].forEach((idx,j)=>{const {worst}=extremes(series[idx]);rows[j].querySelector('.summary-context').textContent=formatPeriod(worst);rows[j].querySelector('td').textContent=formatReturn(worst.rate);});
+ const thirty=extremes(series[6]);rows[2].querySelector('td').textContent=formatReturn(thirty.worst.rate)+'–'+formatReturn(thirty.best.rate);
+ const name=returnMode==='real'?'Inflation-adjusted returns':'Nominal USD returns';document.getElementById('return-basis').textContent=name;
+ document.querySelector('.compact-summary thead th:last-child').textContent=returnMode==='real'?'Real return':'Nominal return';
+ document.getElementById('basis-description').textContent=returnMode==='real'?'Real returns measure changes in purchasing power.':'Nominal returns include inflation.';
+ document.getElementById('chart-title').textContent=returnMode==='real'?'Rolling inflation-adjusted returns':'Rolling nominal returns';
+}
+document.getElementById('return-mode').addEventListener('change',event=>{returnMode=event.target.value;series.forEach(s=>s.values.forEach(v=>v.rate=returnMode==='real'?v.realRate:v.nominalRate));updateTables();redrawCharts.forEach(draw=>draw());});
+updateTables();
+
 const allSeries=series;
 for(let panelIndex=0;panelIndex<3;panelIndex++){
 const root=document.getElementById('panel-'+panelIndex);
@@ -133,7 +160,7 @@ function draw(){
  for(let v=low;v<=high+step*.1;v+=step){el('line',{x1:left,x2:w-right,y1:y(v),y2:y(v),stroke:Math.abs(v)<1e-8?'#888888':'#363636','stroke-width':Math.abs(v)<1e-8?1.2:1});el('text',{x:left-9,y:y(v)+4,'text-anchor':'end'},(Math.abs(v)<1e-8?'0':(v*100).toFixed(step===.025?1:0))+'%');}
  const ticks=w<500?[1930,1960,1990,2025]:[1930,1945,1960,1975,1990,2005,2025];
  ticks.forEach(year=>el('text',{x:x(year),y:h-bottom+23,'text-anchor':year===2025?'end':'middle'},String(year)));
- el('text',{x:left,y:14},'Annualized return');el('text',{x:(left+w-right)/2,y:h-4,'text-anchor':'middle'},'Ending calendar year');
+ el('text',{x:left,y:14},returnMode==='real'?'Real annualized return':'Nominal annualized return');el('text',{x:(left+w-right)/2,y:h-4,'text-anchor':'middle'},'Ending calendar year');
  visible.forEach(s=>{el('path',{d:s.values.map((v,i)=>(i?'L':'M')+x(v.year).toFixed(2)+','+y(v.rate).toFixed(2)).join(' '),fill:'none',stroke:s.color,'stroke-width':2,'stroke-dasharray':['','7 3','2 3'][series.indexOf(s)],'stroke-linejoin':'round','stroke-linecap':'round'});});
  if(!visible.length)el('text',{x:(left+w-right)/2,y:h/2,'text-anchor':'middle',class:'empty'},'Select a holding period above.');
  const focus=el('g',{class:'chart-focus','pointer-events':'none'});el('line',{class:'year-guide',y1:top,y2:h-bottom,stroke:'#e3e3e3','stroke-opacity':.35,'stroke-dasharray':'3 4'},undefined,focus);
@@ -154,13 +181,14 @@ function inspectYear(year,showTip){
 }
 svg.addEventListener('pointerleave',()=>{tip.hidden=true;});
 yearInput.addEventListener('input',()=>inspectYear(Number(yearInput.value),false));get('scale').addEventListener('change',draw);
+redrawCharts.push(draw);
 new ResizeObserver(draw).observe(plot);
 
 draw();
 }
 function download(name,rows){const csv=rows.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-document.getElementById('download-data').addEventListener('click',()=>download('annual-stock-returns-1928-2025.csv',[['Year','Nominal total return (decimal; dividends included)'],...annual]));
-document.getElementById('download-summary').addEventListener('click',()=>download('rolling-stock-returns-summary.csv',[['Holding years','Worst annualized return (decimal)','Worst start year','Worst end year','Best annualized return (decimal)','Best start year','Best end year','Window count'],...series.map(s=>{const worst=s.values.reduce((a,b)=>a.rate<b.rate?a:b),best=s.values.reduce((a,b)=>a.rate>b.rate?a:b);return[s.n,worst.rate,worst.start,worst.year,best.rate,best.start,best.year,s.values.length];})]));
+document.getElementById('download-data').addEventListener('click',()=>download('annual-stock-returns-1928-2025.csv',[['Year','Nominal total return (decimal; dividends included)','December CPI-U','Prior December CPI-U','Dec-to-Dec inflation (decimal)','Real total return (decimal)'],...annual.map(([year,rate])=>[year,rate,cpiDecember[year],cpiDecember[year-1],cpiDecember[year]/cpiDecember[year-1]-1,(1+rate)*cpiDecember[year-1]/cpiDecember[year]-1])]));
+document.getElementById('download-summary').addEventListener('click',()=>download('rolling-stock-returns-'+returnMode+'-summary.csv',[['Return basis','Holding years','Worst annualized return (decimal)','Worst start year','Worst end year','Best annualized return (decimal)','Best start year','Best end year','Window count'],...series.map(s=>{const worst=s.values.reduce((a,b)=>a.rate<b.rate?a:b),best=s.values.reduce((a,b)=>a.rate>b.rate?a:b);return[returnMode,s.n,worst.rate,worst.start,worst.year,best.rate,best.start,best.year,s.values.length];})]));
 </script>
 </body>
 </html>

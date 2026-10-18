@@ -19,6 +19,18 @@ main{max-width:1020px}header{padding-top:42px;padding-bottom:28px}h1{font-size:c
 @media(max-width:700px){.highlights{gap:0}.highlight{padding:15px 0}.chart-shell{padding:0}.controls{padding:0}.year-control,.year-detail,.chart-caption{margin-left:0;margin-right:0}}
 @media print{:root{--paper:white;--ink:#111;--muted:#444;--border:#ccc;--blue:#125ea8}body{background:white;color:#111}.highlight,.table-wrap,th,.formula{background:white;color:#111}.positive{color:#187464}.negative{color:#ad394b}.plot text{fill:#444}}
 
+
+/* Compact summary remains a table at every screen size. */
+.compact-summary{margin:0;overflow:visible}
+.compact-summary table{table-layout:fixed;white-space:normal}
+.compact-summary th,.compact-summary td{padding:9px 12px}
+.compact-summary thead th{font-size:12px}
+.compact-summary thead th:last-child{width:140px}
+.compact-summary tbody th{font-size:13px;font-weight:400;line-height:1.4;background:transparent;color:var(--ink)}
+.compact-summary td{font-size:16px;line-height:1.4;white-space:nowrap;font-weight:500}
+.compact-summary .summary-context{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:2px}
+@media(max-width:700px){.compact-summary thead th:last-child{width:121px}.compact-summary th,.compact-summary td{padding:8px}.compact-summary td{font-size:15px}}
+
 </style>
 </head>
 <body>
@@ -29,10 +41,15 @@ main{max-width:1020px}header{padding-top:42px;padding-bottom:28px}h1{font-size:c
 <h1>Historical stock returns</h1>
 <div class="metadata"><span>98 complete calendar years</span><span>Dividends included</span><span>Nominal USD returns</span></div>
 </header>
-<div class="highlights" aria-label="Selected historical findings">
-<div class="highlight"><span class="label">Worst single calendar year</span><strong>−43.8%</strong><p>1931 · a one-year loss</p></div>
-<div class="highlight"><span class="label">Worst 20-year annualized return</span><strong>+2.4%</strong><p>1929–1948 · before inflation</p></div>
-<div class="highlight"><span class="label">30-year annualized range</span><strong>8.0%–13.6%</strong><p>Across 69 overlapping historical windows</p></div>
+<div class="table-wrap compact-summary">
+<table aria-label="Selected historical findings">
+<thead><tr><th scope="col">Historical finding</th><th scope="col" class="numeric">Return</th></tr></thead>
+<tbody>
+<tr><th scope="row">Worst single year<span class="summary-context">1931</span></th><td class="numeric">−43.8%</td></tr>
+<tr><th scope="row">Worst 20-year annualized<span class="summary-context">1929–1948 · before inflation</span></th><td class="numeric">+2.4%</td></tr>
+<tr><th scope="row">30-year annualized range<span class="summary-context">69 overlapping windows</span></th><td class="numeric">8.0%–13.6%</td></tr>
+</tbody>
+</table>
 </div>
 <section aria-labelledby="chart-title">
 <div class="section-head"><div><h2 id="chart-title">Rolling annualized returns</h2><p>Compare rolling returns by the year an investment ends. A 10-year point at 2009 covers January 2000 through December 2009.</p></div></div>

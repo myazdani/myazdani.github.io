@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c1d1f">
+  <meta name="description" content="Explore how US stock returns vary with the holding period, using 98 years of annual returns, reinvested dividends, and an inflation adjustment.">
+  <title>Time in the market — Mehrdad Yazdani</title>
+  <link rel="canonical" href="https://myazdani.github.io/posts/stock-returns/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Mehrdad Yazdani — Notes" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/blog.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Time in the market — Mehrdad Yazdani">
+  <meta property="og:description" content="Explore how US stock returns vary with the holding period, using 98 years of annual returns, reinvested dividends, and an inflation adjustment.">
+  <meta property="og:url" content="https://myazdani.github.io/posts/stock-returns/">
+  <meta property="og:site_name" content="Mehrdad Yazdani — Notes">
+  <meta property="article:published_time" content="2026-11-01T12:00:00-08:00"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Time in the market","description":"Explore how US stock returns vary with the holding period, using 98 years of annual returns, reinvested dividends, and an inflation adjustment.","datePublished":"2026-11-01","author":{"@type":"Person","name":"Mehrdad Yazdani","url":"https://myazdani.github.io/about/"},"mainEntityOfPage":"https://myazdani.github.io/posts/stock-returns/"}</script>
+  <script src="/assets/blog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="Mehrdad Yazdani, home"><span class="monogram" aria-hidden="true">my.</span><span>Mehrdad Yazdani<span class="wordmark-detail">Notes &amp; explorations</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" aria-current="page">Notes</a>
+      <a href="/about/" >About</a>
+      <a class="github-link" href="https://github.com/myazdani">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main" class="wrap"><a class="back-link" href="/"><span aria-hidden="true">←</span> All notes</a>
+<article><header class="article-header"><div class="eyebrow">Markets · An interactive essay</div><h1>Time in the market</h1><p class="article-subtitle">Historical stock returns, adjusted for inflation</p><div class="article-meta"><span>By Mehrdad Yazdani</span><span class="meta-divider" aria-hidden="true"></span><time datetime="2026-11-01">November 1, 2026</time><span class="meta-divider" aria-hidden="true"></span><span>3 min read + interactive</span></div><div class="post-meta"><span class="tag">Markets</span> <span class="tag">Interactive</span></div></header>
+<div class="article-body"><p>A single year of market returns can look very different from a decade. This analysis lets you explore that difference: choose a holding period, inspect the historical windows, and compare returns in dollars with returns in purchasing power.</p>
+<p>The underlying project covers <strong>1928–2025</strong>, includes reinvested dividends, and defaults to inflation-adjusted returns. The interactive version below is the same analysis available on the <a href="/stock-returns/">standalone project page</a>.</p>
+<h2>Explore the analysis</h2>
+<p>Start with the <strong>return basis</strong> selector. “Inflation-adjusted” shows changes in purchasing power; “nominal” shows dollar returns before the inflation adjustment. Each chart groups three holding periods. Toggle the lines and use the year sliders to inspect individual windows.</p>
+<div class="interactive-embed" id="interactive-analysis">
+  <div class="embed-toolbar"><span><span class="status-dot" aria-hidden="true"></span>Interactive analysis</span><a href="/stock-returns/" target="_blank" rel="noopener">Open full screen <span aria-hidden="true">↗</span></a></div>
+  <iframe class="interactive-frame" src="/stock-returns/" title="Historical stock returns: interactive charts, return-basis selector, historical ranges, and methodology" loading="lazy" data-project="stock-returns" height="2700"></iframe>
+  <noscript><p class="embed-fallback">The charts use JavaScript. <a href="/stock-returns/">Open the standalone analysis</a> for its static summary and methodology.</p></noscript>
+</div>
+
+<h2>What each point means</h2>
+<p>A point labeled <strong>2009</strong> on the <strong>10-year</strong> line represents January 2000 through December 2009. It compounds the annual returns across that interval and expresses the result as an equivalent annual growth rate.</p>
+<p>The next point moves the window forward one year. That means adjacent points overlap: they are different investment windows, but they share much of the same history.</p>
+<p>The inflation adjustment uses December CPI values immediately before and at the end of each window. It divides out the cumulative price change rather than subtracting a single inflation rate from the annualized return.</p>
+<h2>Questions to explore</h2>
+<ul>
+<li><strong>How much does the historical range change as the holding period grows?</strong> Compare the short, medium, and long holding-period panels.</li>
+<li><strong>How different are nominal and real returns?</strong> Switch the return basis while inspecting the same period.</li>
+<li><strong>How much does the ending year matter?</strong> Move a year slider rather than looking only at the latest observation.</li>
+</ul>
+<p>The worst/best table summarizes the observed extremes for every holding period. The CSV download buttons let you inspect the annual data and summary calculations separately.</p>
+<h2>Data and boundaries</h2>
+<p>The return series comes from <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html">Aswath Damodaran’s historical returns dataset at NYU Stern</a>, using the S&amp;P 500 series including dividends. Earlier years use historical predecessor data. Inflation comes from the <a href="https://www.bls.gov/cpi/tables/supplemental-files/historical-cpi-u-202512.xlsx">BLS historical CPI-U table for December 2025</a>.</p>
+<p>This is a fixed snapshot of complete calendar years through 2025. It assumes reinvested dividends and no contributions or withdrawals during a window. Taxes, fees, and trading costs are excluded; monthly starting dates could give different extremes. The embedded analysis contains the full methodology and retrieval dates.</p>
+<p>These are historical windows, with substantial overlap between them. They describe this dataset; they do not establish probabilities for future outcomes or guarantee a return.</p>
+<div class="article-end"><a href="/">← Back to all notes</a><button class="copy-link" type="button" data-copy-link>Copy link</button></div><span class="copy-status" role="status" aria-live="polite"></span></div></article></main>
+  <footer class="site-footer wrap">
+    <span>© 2026 Mehrdad Yazdani</span>
+    <span><a href="/feed.xml">RSS feed <span aria-hidden="true">↗</span></a><span class="footer-dot" aria-hidden="true">·</span><a href="https://github.com/myazdani/myazdani.github.io">Source <span aria-hidden="true">↗</span></a></span>
+  </footer>
+</body>
+</html>

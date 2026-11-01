@@ -1,0 +1,12 @@
+{
+  "name": "mehrdad-yazdani-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A small, static blog with Markdown posts and interactive projects.",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": { "marked": "17.0.5" }
+}

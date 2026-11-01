@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1c1d1f">
+  <meta name="description" content="Explore revenue and workforce size across 57 technology, streaming, and media companies, with an interactive timeline and company-level sources.">
+  <title>Revenue per employee — Mehrdad Yazdani</title>
+  <link rel="canonical" href="https://myazdani.github.io/posts/revenue-per-employee/">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" type="application/rss+xml" title="Mehrdad Yazdani — Notes" href="/feed.xml">
+  <link rel="stylesheet" href="/assets/blog.css">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Revenue per employee — Mehrdad Yazdani">
+  <meta property="og:description" content="Explore revenue and workforce size across 57 technology, streaming, and media companies, with an interactive timeline and company-level sources.">
+  <meta property="og:url" content="https://myazdani.github.io/posts/revenue-per-employee/">
+  <meta property="og:site_name" content="Mehrdad Yazdani — Notes">
+  <meta property="article:published_time" content="2026-11-01T12:00:00-08:00"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Revenue per employee","description":"Explore revenue and workforce size across 57 technology, streaming, and media companies, with an interactive timeline and company-level sources.","datePublished":"2026-11-01","author":{"@type":"Person","name":"Mehrdad Yazdani","url":"https://myazdani.github.io/about/"},"mainEntityOfPage":"https://myazdani.github.io/posts/revenue-per-employee/"}</script>
+  <script src="/assets/blog.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="/" aria-label="Mehrdad Yazdani, home"><span class="monogram" aria-hidden="true">my.</span><span>Mehrdad Yazdani<span class="wordmark-detail">Notes &amp; explorations</span></span></a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" aria-current="page">Notes</a>
+      <a href="/about/" >About</a>
+      <a class="github-link" href="https://github.com/myazdani">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main id="main" class="wrap"><a class="back-link" href="/"><span aria-hidden="true">←</span> All notes</a>
+<article><header class="article-header"><div class="eyebrow">Business · An interactive essay</div><h1>Revenue per employee</h1><p class="article-subtitle">Company scale, headcount, and revenue over time</p><div class="article-meta"><span>By Mehrdad Yazdani</span><span class="meta-divider" aria-hidden="true"></span><time datetime="2026-11-01">November 1, 2026</time><span class="meta-divider" aria-hidden="true"></span><span>3 min read + interactive</span></div><div class="post-meta"><span class="tag">Business</span> <span class="tag">Interactive</span></div></header>
+<div class="article-body"><p>How does a company&#39;s revenue change relative to the size of its workforce? This interactive analysis brings both quantities into one view, then lets you follow them through time.</p>
+<p>The project covers <strong>57 technology, streaming, and media companies</strong> across a <strong>2019–2026</strong> view. It builds on <a href="https://www.derrickongchin.com/analysis/ai-efficiency-era">Derrick Ongchin’s original research</a>, with additional streaming and media comparisons and links to the underlying sources.</p>
+<h2>Explore the companies</h2>
+<p>Each bubble represents a company. Move through the timeline, filter a group, or select a company to inspect its revenue, workforce size, historical path, and source notes. The <a href="/revenue-per-employee/">standalone analysis</a> provides more room for the chart.</p>
+<div class="interactive-embed" id="interactive-analysis">
+  <div class="embed-toolbar"><span><span class="status-dot" aria-hidden="true"></span>Interactive analysis</span><a href="/revenue-per-employee/" target="_blank" rel="noopener">Open full screen <span aria-hidden="true">↗</span></a></div>
+  <iframe class="interactive-frame" src="/revenue-per-employee/" title="Revenue per employee: interactive company bubble chart, timeline, rankings, and source notes" loading="lazy" data-project="revenue-per-employee" height="3400"></iframe>
+  <noscript><p class="embed-fallback">The chart uses JavaScript. <a href="/revenue-per-employee/">Open the standalone analysis</a> to read its methodology and source links.</p></noscript>
+</div>
+
+<h2>How to read the chart</h2>
+<ul>
+<li><strong>Horizontal position</strong> shows workforce size on a logarithmic scale. Equal horizontal distances represent equal multiples of headcount.</li>
+<li><strong>Vertical position</strong> shows revenue per employee: revenue divided by the stated workforce count.</li>
+<li><strong>Bubble area</strong> represents revenue. A larger company can have a lower ratio than a much smaller company.</li>
+<li><strong>The timeline and trails</strong> show changes across the available years. Playback between annual rows is a visual interpolation, rather than an additional observation.</li>
+</ul>
+<p>Selecting a company brings its individual history and measurement notes into focus. The ranking is another way to explore the same comparisons, with status labels distinguishing reported figures, estimates, and projections.</p>
+<h2>What the ratio leaves out</h2>
+<p>Revenue per employee is a narrow measure. It does not capture profitability, capital requirements, compute costs, contractor labor, outsourcing, or product quality. It can rise because revenue grows, because the workforce shrinks, or because both change together.</p>
+<p>The figures also mix business models and reporting conventions. Retail sales, software subscriptions, advertising, and marketplace revenue do not represent interchangeable kinds of activity. Changes in the ratio alone cannot establish that AI caused an efficiency gain.</p>
+<h2>Comparing streaming and media</h2>
+<p>The streaming and media view includes consolidated companies as well as service-level comparisons. Disney&#39;s figures describe the whole company; they are not a standalone Disney+ measure. Tubi is also included within its parent Fox, so those rows should not be added together.</p>
+<p>Some comparisons use different observation dates, carried-forward figures, or pro forma estimates. Workforce definitions also vary, including employees, full-time equivalents, and approximate team sizes. The company details and methodology explain these distinctions.</p>
+<p>The 2026 view includes reported fiscal years, estimates, and projections. Check each company&#39;s period and source status before treating two bubbles as a direct comparison.</p>
+<h2>Sources and reproducibility</h2>
+<p>The <a href="https://www.derrickongchin.com/analysis/ai-efficiency-era">original analysis</a>, source CSVs, supplementary streaming and media data, and company-specific source links are available in the interactive project. The implementation is also available in the <a href="https://github.com/myazdani/revenue-per-employee">GitHub repository</a>.</p>
+<div class="article-end"><a href="/">← Back to all notes</a><button class="copy-link" type="button" data-copy-link>Copy link</button></div><span class="copy-status" role="status" aria-live="polite"></span></div></article></main>
+  <footer class="site-footer wrap">
+    <span>© 2026 Mehrdad Yazdani</span>
+    <span><a href="/feed.xml">RSS feed <span aria-hidden="true">↗</span></a><span class="footer-dot" aria-hidden="true">·</span><a href="https://github.com/myazdani/myazdani.github.io">Source <span aria-hidden="true">↗</span></a></span>
+  </footer>
+</body>
+</html>

@@ -3,6 +3,8 @@
 A static blog with Markdown posts, shared layouts, RSS, and embedded interactive
 projects. Published at https://myazdani.github.io/ using the existing `master`
 branch. The standalone `/stock-returns/` project keeps its original URL and code.
+The `/revenue-per-employee/` project is hosted by its separate GitHub Pages
+repository and is embedded in its own blog post. Its source remains independent.
 
 ## Add a post
 
@@ -16,7 +18,10 @@ branch. The standalone `/stock-returns/` project keeps its original URL and code
 The build updates the homepage, post pages, RSS feed, and sitemap. GitHub Pages
 serves the checked-in HTML directly; `.nojekyll` disables an additional Jekyll
 build. No backend or paid service is required. `dist/` is a complete ignored
-copy for local preview; generated pages at the repository root are published.
+copy of the blog for local preview; generated pages at the repository root are
+published. For local previews of the separate revenue-per-employee project,
+copy that repository's public files into `dist/revenue-per-employee/` after
+building. Production embeds use its existing GitHub Pages URL.
 
 To include an existing project, link to it or copy the `interactive-embed`
 block from the first post. Same-origin project frames resize to fit their
@@ -31,5 +36,7 @@ The “Open full screen” link always opens the standalone page.
 - Blog homepage, About page, and output generation: `scripts/build.mjs`
 - Writing: `_posts/*.md`
 
-The first post’s chart preview is generated from the original project’s actual
-return and CPI data. It is a preview, not a separate financial dataset.
+The stock-return preview is generated from its actual return and CPI data.
+The revenue-per-employee preview is a static snapshot of the original project's
+2026 annual data and dated comparisons. Its bubble positions and areas use the
+same headcount, ratio, and revenue definitions; no companies are highlighted.

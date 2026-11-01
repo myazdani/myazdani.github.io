@@ -60,7 +60,8 @@ output('404.html', render(`<section class="empty-page"><div class="eyebrow">404 
 
 const feedItems = posts.map(post => `<item><title>${escape(post.title)}</title><link>${base}${post.url}</link><guid isPermaLink="true">${base}${post.url}</guid><pubDate>${new Date(post.date+'T20:00:00Z').toUTCString()}</pubDate><description>${escape(post.description)}</description>${post.tags.map(tag=>`<category>${escape(tag)}</category>`).join('')}</item>`).join('\n');
 output('feed.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>${name} — Notes</title><link>${base}/</link><description>${escape(description)}</description><language>en-us</language><atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml"/>${feedItems}</channel></rss>\n`);
-output('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['/','/about/','/stock-returns/',...posts.map(post=>post.url)].map(path=>`<url><loc>${base}${path}</loc></url>`).join('')}</urlset>\n`);
+const sitemapPaths = [...new Set(['/','/about/',...posts.map(post=>post.project).filter(path=>path?.startsWith('/')),...posts.map(post=>post.url)])];
+output('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${sitemapPaths.map(path=>`<url><loc>${base}${path}</loc></url>`).join('')}</urlset>\n`);
 output('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${base}/sitemap.xml\n`);
 
 // Create a real, data-derived preview from the existing project. It uses the

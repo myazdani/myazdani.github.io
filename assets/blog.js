@@ -6,10 +6,12 @@ for (const frame of document.querySelectorAll('.interactive-frame')) {
     try {
       const doc = frame.contentDocument;
       if (!doc?.body) return;
-      if (frame.dataset.project === 'stock-returns' && !doc.getElementById('blog-embed-style')) {
+      if (['stock-returns', 'revenue-per-employee'].includes(frame.dataset.project) && !doc.getElementById('blog-embed-style')) {
         const style = doc.createElement('style');
         style.id = 'blog-embed-style';
-        style.textContent = 'html,body{min-height:0!important}main{padding:22px 24px 30px!important;max-width:none!important}main>.topbar,main>header{display:none!important}@media(max-width:700px){main{padding:18px 12px 24px!important}}';
+        style.textContent = frame.dataset.project === 'stock-returns'
+          ? 'html,body{min-height:0!important}main{padding:22px 24px 30px!important;max-width:none!important}main>.topbar,main>header{display:none!important}@media(max-width:700px){main{padding:18px 12px 24px!important}}'
+          : 'html,body{min-height:0!important}.masthead,.intro{display:none!important}.page{padding:20px 24px!important}@media(max-width:700px){.page{padding:16px 12px!important}}';
         doc.head.append(style);
       }
       const height = Math.ceil(doc.body.getBoundingClientRect().height) + 2;

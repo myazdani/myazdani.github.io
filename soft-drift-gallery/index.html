@@ -77,7 +77,6 @@
     const fmt = new Intl.DateTimeFormat(undefined,{year:"numeric",month:"short",day:"numeric",timeZone:"America/Los_Angeles"});
     const safe = value => String(value).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;");
     fetch("./gallery.json").then(r=>r.json()).then(items=>{
-      document.querySelector("#count").textContent = items.length + (items.length===1?" study":" studies");
       for(const item of items){
         const date = new Date(item.created_at);
         const card = document.createElement("article");

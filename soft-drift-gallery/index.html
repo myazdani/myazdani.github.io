@@ -11,11 +11,6 @@
     * { box-sizing:border-box; }
     body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
     .shell { width:min(100% - 48px, 1120px); margin:0 auto; }
-    header { padding:36px 0 24px; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:24px; }
-    .brand { display:flex; align-items:center; gap:12px; }
-    .mark { width:31px; aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 34% 30%,#fff 0 13%,#c9c7c0 14% 26%,#55544f 27% 44%,#e3e1da 45% 60%,#171715 61%); box-shadow:0 0 0 1px #d7d5ce; }
-    h1 { font-size:18px; font-weight:600; letter-spacing:-.04em; margin:0; }
-    .count { color:var(--muted); font-size:12px; letter-spacing:.04em; }
     .intro { padding:38px 0 32px; }
     .intro p { margin:0; color:#77746e; font-size:13px; letter-spacing:.015em; }
     .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px 24px; padding-bottom:72px; }
@@ -40,7 +35,6 @@
     .detail p { font-size:13px; color:#c7c5be; line-height:1.6; margin:0; }
     @media (max-width:760px) {
       .shell { width:min(100% - 28px,560px); }
-      header { padding:24px 0 18px; }
       .intro { padding:28px 0 22px; }
       .grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px 12px; }
       .meta { padding-top:9px; }
@@ -60,10 +54,6 @@
 </head>
 <body>
   <div class="shell">
-    <header>
-      <div class="brand"><span class="mark" aria-hidden="true"></span><h1>soft drift</h1></div>
-      <div class="count" id="count">31 studies</div>
-    </header>
     <main>
       <div class="intro"><p>Monochrome studies in texture, density &amp; chance.</p></div>
       <section class="grid" id="gallery" aria-label="Artwork gallery"></section>
